@@ -1,7 +1,3 @@
-<?php
-session_start();
-$url = $_SERVER["PHP_SELF"];
-?>
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">
 
@@ -16,24 +12,24 @@ $url = $_SERVER["PHP_SELF"];
 
 <body>
   <?php
-  include_once("navbar.php");
+  include_once("../navbar.php");
   if (!empty($_SESSION["nav_admin"]) && isset($_SESSION["nav_admin"])) {
-    include_once("nav_admin.php");
+    include_once("../nav_admin.php");
   }
-  
+
   ?>
   <div class="container mt-3">
     <?php
 
-    include_once("connect.php");
+    include_once("../connect.php");
 
     if (!empty($_GET["o"]) && strtolower($_GET["o"]) != "index") {
       include($_GET["o"] . ".php");
     } else {
-      include_once("home.php");
+      include_once("blog.php");
     }
 
-    include_once("footer.php");
+    include_once("../footer.php");
 
     $conn->close();
 

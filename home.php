@@ -1,7 +1,7 @@
 <div class="container mt-5">
   <div class="row">
     <div class="col-sm">
-      <a href="<?= $url ?>?o=blog" class="text-decoration-none">
+      <a href="<?= $_SERVER["REQUEST_URI"] ?>/blog" class="text-decoration-none">
         <div class="card">
           <img src="img/Veados.png" alt="" class="card-img-top">
           <div class="card-body">
