@@ -31,7 +31,7 @@ if (!empty($_GET["id"]) && isset($_GET["id"])) {
       echo "<div class='row'>";
 
       echo "<div class='col-sm-6'>";
-      echo "<img src='$img_url' alt='' class='img-fluid rounded img-thumbnail'>";
+      echo "<img src='img/{$img_url}' alt='' class='img-fluid rounded img-thumbnail'>";
       echo "</div>";
 
       echo "<div class='col-sm-6'>";

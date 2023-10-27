@@ -1,6 +1,8 @@
-<?php
-include_once("../connect.php");
-?>
+<ul class="nav nav-pills">
+  <li class="nav-item">
+    <a href="<?= $url ?>" class="nav-link active"><i class="bi bi-arrow-return-left"></i> Previous</a>
+  </li>
+</ul>
 
 <div class="container">
   <h1 class="text-center mb-5">Shop</h1>

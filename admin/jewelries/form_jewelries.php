@@ -1,7 +1,3 @@
-<?php
-include_once("funcoes.php");
-?>
-
 <form action="" method="post" enctype="multipart/form-data">
   <div class="mb-3">
     <label for="type" class="form-label">Type</label>

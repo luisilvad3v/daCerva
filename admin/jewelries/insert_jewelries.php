@@ -1,9 +1,7 @@
 <?php
-include_once("funcoes.php");
 
 echo "<h2>Insert Jewelries</h2>";
 include_once("form_jewelries.php");
-
 
 if (!empty($_POST['type']) and !empty($_POST['stone']) and !empty($_POST['price']) and !empty($_POST['stock'])) {
   $type = $_POST["type"];
@@ -17,7 +15,6 @@ if (!empty($_POST['type']) and !empty($_POST['stone']) and !empty($_POST['price'
   } else {
     $img_url = "";
   }
-
 
   $sql = "INSERT INTO jewelries (id_jewelry_type, id_stone, price, stock, img_url)
           VALUES ('$type', '$stone', '$price', '$stock', '$img_url')";

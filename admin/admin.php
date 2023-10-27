@@ -1,11 +1,12 @@
 <?php
 
-if (!isset($_SESSION["nav_admin"])) {
-  $_SESSION["nav_admin"] = 1;
-} elseif ($_SESSION["nav_admin"] == 0) {
-  $_SESSION["nav_admin"] = 1;
+if (!isset($_COOKIE["nav_admin"])) {
+  $_COOKIE["nav_admin"] = 1;
+  setcookie("nav_admin", 1, time() + (86400 * 30), "/");
+} elseif ($_COOKIE["nav_admin"] == 0) {
+  setcookie("nav_admin", 1, time() + (86400 * 30), "/");
 } else {
-  $_SESSION["nav_admin"] = 0;
+  setcookie("nav_admin", 0, time() + (86400 * 30), "/");
 }
 
 header("location:$url");

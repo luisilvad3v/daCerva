@@ -24,7 +24,7 @@ $url = '/dacerva/';
       <?php
       if (!empty($_COOKIE['id_user'])) {
         if (!empty($_COOKIE['admin'])) {
-          echo "<a class='btn btn-primary me-1' href='$url?o=admin'>Admin</a>";
+          echo "<a class='btn btn-primary me-1' href='{$url}admin/'>Admin</a>";
         }
         echo "<a class='btn btn-primary' href='{$url}logout/'>Logout</a>";
       } else {

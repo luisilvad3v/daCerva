@@ -1,6 +1,5 @@
 <?php
 ob_start();
-include_once("connect.php");
 
 if (!empty($_GET["e"]) && isset($_GET["e"])) {
 
@@ -55,6 +54,6 @@ if (
 
   $result = $conn->query($sql);
 
-  header("location:$url?o=list_jewelries");
+  header("location:{$url}admin/jewelries");
 }
 ?>
