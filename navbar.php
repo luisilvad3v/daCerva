@@ -1,3 +1,7 @@
+<?php
+$url = '/dacerva/';
+?>
+
 <nav class="navbar navbar-expand bg-body-tertiary">
   <div class="container-fluid">
 
@@ -7,24 +11,24 @@
         <a class="nav-link" href="<?= $url ?>">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="<?= $url ?>?o=blog">Blog</a>
+        <a class="nav-link" href="<?= $url ?>blog/">Blog</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="<?= $url ?>?o=shop">Shop</a>
+        <a class="nav-link" href="<?= $url ?>shop/">Shop</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="<?= $url ?>?o=about">About</a>
+        <a class="nav-link" href="<?= $url ?>about/">About</a>
       </li>
     </ul>
     <div class="d-flex col justify-content-end">
       <?php
-      if (!empty($_SESSION['id_user'])) {
-        if (!empty($_SESSION['admin'])) {
+      if (!empty($_COOKIE['id_user'])) {
+        if (!empty($_COOKIE['admin'])) {
           echo "<a class='btn btn-primary me-1' href='$url?o=admin'>Admin</a>";
         }
-        echo "<a class='btn btn-primary' href='$url?o=logout'>Logout</a>";
+        echo "<a class='btn btn-primary' href='{$url}logout/'>Logout</a>";
       } else {
-        echo "<a class='btn btn-primary' href='$url?o=login'>Login</a>";
+        echo "<a class='btn btn-primary' href='{$url}login/'>Login</a>";
       }
       ?>
     </div>

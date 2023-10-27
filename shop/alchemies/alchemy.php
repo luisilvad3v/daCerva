@@ -1,11 +1,11 @@
 <ul class="nav nav-pills">
   <li class="nav-item">
-    <a href="<?= $url ?>?o=shop_alchemies" class="nav-link active"><i class="bi bi-arrow-return-left"></i> Previous</a>
+    <a href="<?= $url ?>shop/alchemies" class="nav-link active"><i class="bi bi-arrow-return-left"></i> Previous</a>
   </li>
 </ul>
 
 <?php
-include_once("connect.php");
+include_once("../../connect.php");
 
 if (!empty($_GET["id"]) && isset($_GET["id"])) {
   $id_alchemy = $_GET["id"];

@@ -1,14 +1,15 @@
 <?php
-include_once("connect.php");
+include_once("../../connect.php");
 ?>
 
-<ul class="nav nav-pills">
-  <li class="nav-item">
-    <a href="<?= $url ?>?o=shop" class="nav-link active"><i class="bi bi-arrow-return-left"></i> Previous</a>
-  </li>
-</ul>
-
 <div class="container">
+
+  <ul class="nav nav-pills">
+    <li class="nav-item">
+      <a href="<?= $url ?>shop/" class="nav-link active"><i class="bi bi-arrow-return-left"></i> Previous</a>
+    </li>
+  </ul>
+
   <h1 class="text-center mb-5">Jewelries</h1>
   <div class="row">
 
@@ -29,7 +30,7 @@ include_once("connect.php");
         $img_url = $row["img_url"];
 
         echo "<div class='col-sm'>";
-        echo "<a href='$url?o=view_jewelry&id=$id_jewelry' class='text-decoration-none'>";
+        echo "<a href='{$url}shop/jewelries/index.php?o=jewelry&id=$id_jewelry' class='text-decoration-none'>";
         echo "<div class='card'>";
         echo "<img src='$img_url' alt='' class='card-img-top'>";
         echo "<div class='card-body'>";

@@ -1,6 +1,3 @@
-<?php
-// session_start();
-?>
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">
 
@@ -15,28 +12,27 @@
 
 <body>
   <?php
-  include_once("navbar.php");
+  include_once("../navbar.php");
   if (!empty($_SESSION["nav_admin"]) && isset($_SESSION["nav_admin"])) {
-    include_once("nav_admin.php");
+    include_once("../nav_admin.php");
   }
 
   ?>
   <div class="container mt-3">
+
+    <ul class="nav nav-pills">
+      <li class="nav-item">
+        <a href="<?= $url ?>shop/" class="nav-link active"><i class="bi bi-arrow-return-left"></i> Previous</a>
+      </li>
+    </ul>
+
     <?php
 
-    echo "<pre>";
-    print_r($_COOKIE);
-    echo "</pre>";
+    include_once("../connect.php");
 
-    include_once("connect.php");
+    include_once("about.php");
 
-    if (!empty($_GET["o"]) && strtolower($_GET["o"]) != "index") {
-      include($_GET["o"] . ".php");
-    } else {
-      include_once("home.php");
-    }
-
-    include_once("footer.php");
+    include_once("../footer.php");
 
     $conn->close();
 

@@ -4,7 +4,7 @@ include_once("../connect.php");
 
 <ul class="nav nav-pills">
   <li class="nav-item">
-    <a href="<?= $_SERVER["PHP_SELF"] ?>" class="nav-link active"><i class="bi bi-arrow-return-left"></i> Previous</a>
+    <a href="<?= $url ?>" class="nav-link active"><i class="bi bi-arrow-return-left"></i> Previous</a>
   </li>
 </ul>
 

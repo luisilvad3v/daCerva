@@ -1,19 +1,13 @@
 <?php
-include_once("connect.php");
+include_once("../connect.php");
 ?>
-
-<ul class="nav nav-pills">
-  <li class="nav-item">
-    <a href="<?= $url ?>" class="nav-link active"><i class="bi bi-arrow-return-left"></i> Previous</a>
-  </li>
-</ul>
 
 <div class="container">
   <h1 class="text-center mb-5">Shop</h1>
 
   <div class="row">
     <div class="col-sm">
-      <a href="<?= $url ?>?o=shop_alchemies" class="text-decoration-none">
+      <a href="<?= $url ?>shop/alchemies/" class="text-decoration-none">
         <div class="card">
           <img src="img/Lemon balm mosquitoes.jpg" alt="" class="card-img-top">
           <div class="card-body">
@@ -24,7 +18,7 @@ include_once("connect.php");
       </a>
     </div>
     <div class="col-sm">
-      <a href="<?= $url ?>?o=shop_jewelries" class="text-decoration-none">
+      <a href="<?= $url ?>shop/jewelries/" class="text-decoration-none">
         <div class="card">
           <img src="img/flower woman.png" alt="" class="card-img-top">
           <div class="card-body">
