@@ -1,6 +1,6 @@
 <ul class="nav nav-pills">
   <li class="nav-item">
-    <a href="<?= $url ?>" class="nav-link active"><i class="bi bi-arrow-return-left"></i> Previous</a>
+    <a href="../" class="nav-link active"><i class="bi bi-arrow-return-left"></i> Previous</a>
   </li>
 </ul>
 
@@ -9,7 +9,7 @@
 
   <div class="row">
     <div class="col-sm">
-      <a href="<?= $url ?>shop/alchemies/" class="text-decoration-none">
+      <a href="alchemies/" class="text-decoration-none">
         <div class="card">
           <img src="alchemies/img/Lemon balm mosquitoes.jpg" alt="" class="card-img-top">
           <div class="card-body">
@@ -20,7 +20,7 @@
       </a>
     </div>
     <div class="col-sm">
-      <a href="<?= $url ?>shop/jewelries/" class="text-decoration-none">
+      <a href="jewelries/" class="text-decoration-none">
         <div class="card">
           <img src="jewelries/img/flower woman.png" alt="" class="card-img-top">
           <div class="card-body">

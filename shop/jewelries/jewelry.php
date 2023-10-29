@@ -1,6 +1,6 @@
 <ul class="nav nav-pills">
   <li class="nav-item">
-    <a href="<?= $url ?>shop/jewelries/" class="nav-link active"><i class="bi bi-arrow-return-left"></i> Previous</a>
+    <a href="./" class="nav-link active"><i class="bi bi-arrow-return-left"></i> Previous</a>
   </li>
 </ul>
 

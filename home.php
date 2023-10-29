@@ -1,7 +1,9 @@
+<h1 class="text-center">daCerva</h1>
+
 <div class="container mt-5">
   <div class="row">
     <div class="col-sm">
-      <a href="<?= $url ?>blog" class="text-decoration-none">
+      <a href="blog/" class="text-decoration-none">
         <div class="card">
           <img src="img/Veados.png" alt="" class="card-img-top">
           <div class="card-body">
@@ -12,7 +14,7 @@
       </a>
     </div>
     <div class="col-sm">
-      <a href="<?= $url ?>shop/" class="text-decoration-none">
+      <a href="shop/" class="text-decoration-none">
         <div class="card">
           <img src="shop/jewelries/img/flower woman.png" alt="" class="card-img-top">
           <div class="card-body">
@@ -23,7 +25,7 @@
       </a>
     </div>
     <div class="col-sm">
-      <a href="<?= $url ?>about/" class="text-decoration-none">
+      <a href="about/" class="text-decoration-none">
         <div class="card">
           <img src="img/family 3.png" alt="" class="card-img-top">
           <div class="card-body">
