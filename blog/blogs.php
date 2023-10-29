@@ -21,7 +21,7 @@
         $youtube_url = $row["youtube_url"];
         $thumbnail_url = $row["thumbnail_url"];
 
-        echo "<div class='col-sm'>";
+        echo "<div class='col-sm-6 col-md-4 col-lg-3'>";
         echo "<a href='?o=blog&id=$id_blog' class='text-decoration-none'>";
         echo "<div class='card'>";
         echo "<img src='$thumbnail_url' alt='' class='card-img-top'>";

@@ -28,7 +28,7 @@ include_once("../../connect.php");
         $stock = $row["stock"];
         $img_url = $row["img_url"];
 
-        echo "<div class='col-sm'>";
+        echo "<div class='col-sm-6 col-md-4 col-lg-3'>";
         echo "<a href='?o=alchemy&id=$id_alchemy' class='text-decoration-none'>";
         echo "<div class='card'>";
         echo "<img src='img/{$img_url}' alt='' class='card-img-top'>";

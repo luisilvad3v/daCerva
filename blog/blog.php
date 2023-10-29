@@ -24,10 +24,12 @@ if (!empty($_GET["id"]) && isset($_GET["id"])) {
 
       echo "<div class='container mt-5'>";
       echo "<div class='row'>";
-      echo "<div class='col'>";
-      echo "$youtube_url";
+      echo "<div class='col-lg-6 text-center'>";
+      echo "<div class='ratio ratio-16x9'>";
+      echo "<iframe src='$youtube_url' class='img-fluid img-thumbnail rounded-4 w-100' title='YouTube video player' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>";
       echo "</div>";
-      echo "<div class='col text-center'>";
+      echo "</div>";
+      echo "<div class='col-lg-6 text-center'>";
       echo "<h2>$title</h2>";
       echo "<p>$date</p>";
       echo "</div>";
