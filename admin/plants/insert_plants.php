@@ -1,10 +1,7 @@
 <?php
-include_once("funcoes.php")
-?>
 
-<h2>Insert Plant</h2>
+echo "<h2>Insert Plant</h2>";
 
-<?php
 include_once("form_plants.php");
 
 
@@ -18,5 +15,3 @@ if (!empty($_POST['plant_eng']) and !empty($_POST['plant_la'])) {
     echo "Error: " . $sql . "<br>" . $conn->error;
   }
 }
-
-?>

@@ -1,11 +1,3 @@
-<?php
-
-include_once("insert_stones.php");
-
-?>
-
-<hr>
-
 <h2>Stones</h2>
 
 <table class="table">
@@ -16,8 +8,6 @@ include_once("insert_stones.php");
 
   <?php
 
-  include_once("connect.php");
-
   $sql = "SELECT * FROM stones ORDER BY id_stone DESC";
 
   $result = $conn->query($sql);
@@ -27,8 +17,8 @@ include_once("insert_stones.php");
       echo "<tr>";
       echo "<td>" . $row["id_stone"] . "</td>";
       echo "<td>" . $row["stone"] . "</td>";
-      echo "<td><a href='$url?o=edit_stones&e=" . $row["id_stone"] . "'><i class='bi bi-pencil'></i></a></td>";
-      echo "<td><a href='$url?o=delete_stones&d=" . $row["id_stone"] . "'><i class='bi bi-trash'></i></a></td>";
+      echo "<td><a href='{$url}admin/stones/?o=edit_stones&e=" . $row["id_stone"] . "'><i class='bi bi-pencil'></i></a></td>";
+      echo "<td><a href='{$url}admin/stones/?o=delete_stones&d=" . $row["id_stone"] . "'><i class='bi bi-trash'></i></a></td>";
       echo "</tr>";
     }
   } else {

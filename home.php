@@ -14,7 +14,7 @@
     <div class="col-sm">
       <a href="<?= $url ?>shop/" class="text-decoration-none">
         <div class="card">
-          <img src="img/flower woman.png" alt="" class="card-img-top">
+          <img src="shop/jewelries/img/flower woman.png" alt="" class="card-img-top">
           <div class="card-body">
             <h2>Shop</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae nemo, possimus nam ipsam atque cum? Iusto deserunt dolorum assumenda ipsum molestias exercitationem explicabo officiis quis. Consectetur mollitia quod accusantium reprehenderit?</p>

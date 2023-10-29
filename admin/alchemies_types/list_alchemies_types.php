@@ -1,11 +1,3 @@
-<?php
-
-include_once("insert_alchemies_types.php");
-
-?>
-
-<hr>
-
 <h2>Alchemy types</h2>
 
 <table class="table">
@@ -16,8 +8,6 @@ include_once("insert_alchemies_types.php");
 
   <?php
 
-  include_once("connect.php");
-
   $sql = "SELECT * FROM alchemies_types ORDER BY id_alchemy_type DESC";
 
   $result = $conn->query($sql);
@@ -27,8 +17,8 @@ include_once("insert_alchemies_types.php");
       echo "<tr>";
       echo "<td>" . $row["id_alchemy_type"] . "</td>";
       echo "<td>" . $row["alchemy_type"] . "</td>";
-      echo "<td><a href='$url?o=edit_alchemies_types&e=" . $row["id_alchemy_type"] . "'><i class='bi bi-pencil'></i></a></td>";
-      echo "<td><a href='$url?o=delete_alchemies_types&d=" . $row["id_alchemy_type"] . "'><i class='bi bi-trash'></i></a></td>";
+      echo "<td><a href='{$url}admin/alchemies_types/?o=edit_alchemies_types&e=" . $row["id_alchemy_type"] . "'><i class='bi bi-pencil'></i></a></td>";
+      echo "<td><a href='{$url}admin/alchemies_types/?o=delete_alchemies_types&d=" . $row["id_alchemy_type"] . "'><i class='bi bi-trash'></i></a></td>";
       echo "</tr>";
     }
   } else {

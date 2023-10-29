@@ -1,11 +1,3 @@
-<?php
-
-include_once("insert_blogs.php");
-
-?>
-
-<hr>
-
 <h2>Blogs</h2>
 
 <table class="table">
@@ -18,8 +10,6 @@ include_once("insert_blogs.php");
   <th scope="col"></th>
 
   <?php
-
-  include_once("connect.php");
 
   $sql = "SELECT * FROM blogs ORDER BY id_blog DESC";
 
@@ -34,8 +24,8 @@ include_once("insert_blogs.php");
       echo "<td>" . $row["date"] . "</td>";
       // echo "<td>" . $row["youtube_url"] . "</td>";
       echo "<td><a href='" . $row["thumbnail_url"] . "'><img src='" . $row["thumbnail_url"] . "' alt='' style='width:100px'></td>";
-      echo "<td><a href='$url?o=edit_blogs&e=" . $row["id_blog"] . "'><i class='bi bi-pencil'></i></a></td>";
-      echo "<td><a href='$url?o=delete_blogs&d=" . $row["id_blog"] . "'><i class='bi bi-trash'></i></a></td>";
+      echo "<td><a href='{$url}admin/blogs/?o=edit_blogs&e=" . $row["id_blog"] . "'><i class='bi bi-pencil'></i></a></td>";
+      echo "<td><a href='{$url}admin/blogs/?o=delete_blogs&d=" . $row["id_blog"] . "'><i class='bi bi-trash'></i></a></td>";
       echo "</tr>";
     }
   } else {

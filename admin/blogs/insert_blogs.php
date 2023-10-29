@@ -1,9 +1,8 @@
 <?php
-include_once("funcoes.php");
 
 echo "<h2>Insert Blog Post</h2>";
-include_once("form_blogs.php");
 
+include_once("form_blogs.php");
 
 if (!empty($_POST['title'])) {
   $title = test_input($_POST['title']);
@@ -12,7 +11,7 @@ if (!empty($_POST['title'])) {
   $youtube_url = $_POST['youtube_url'];
 
   if (!empty($_FILES["fileToUpload"]["name"])) {
-    $target_dir = "blog/thumbnails/";
+    $target_dir = "blog/img/";
     include_once("upload_img.php");
     $thumbnail_url = $target_file;
   } else {

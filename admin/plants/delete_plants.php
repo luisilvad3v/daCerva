@@ -1,5 +1,4 @@
 <?php
-include_once("connect.php");
 
 if (!empty($_GET["d"])) {
 
@@ -7,5 +6,5 @@ if (!empty($_GET["d"])) {
 
   $conn->query($sql);
 
-  header("location:$url?o=list_plants");
+  header("location:{$url}admin/plants/");
 }

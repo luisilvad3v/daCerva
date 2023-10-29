@@ -1,5 +1,4 @@
 <?php
-include_once("connect.php");
 
 if (!empty($_GET["e"]) && isset($_GET["e"])) {
 
@@ -34,7 +33,7 @@ if (!empty($_POST["type"]) && isset($_POST["type"]) && $alchemy_type != $_POST["
 
   $result = $conn->query($sql);
 
-  header("location:$url?o=list_alchemies_types");
+  header("location:{$url}admin/alchemies_types/");
 }
 
 ?>

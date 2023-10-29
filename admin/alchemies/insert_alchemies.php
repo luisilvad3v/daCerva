@@ -1,5 +1,4 @@
 <?php
-include_once("funcoes.php");
 
 echo "<h2>Insert Alchemies</h2>";
 

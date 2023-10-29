@@ -1,10 +1,7 @@
 <?php
-include_once("funcoes.php")
-?>
 
-<h2>Insert Alchemy Type</h2>
+echo "<h2>Insert Alchemy Type</h2>";
 
-<?php
 include_once("form_alchemies_types.php");
 
 if (!empty($_POST['type'])) {
@@ -17,5 +14,3 @@ if (!empty($_POST['type'])) {
     echo "Error: " . $sql . "<br>" . $conn->error;
   }
 }
-
-?>

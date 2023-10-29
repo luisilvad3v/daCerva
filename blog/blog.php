@@ -1,45 +1,46 @@
-<?php
-include_once("../connect.php");
-?>
-
 <ul class="nav nav-pills">
   <li class="nav-item">
-    <a href="<?= $url ?>" class="nav-link active"><i class="bi bi-arrow-return-left"></i> Previous</a>
+    <a href="<?= $url ?>blog/" class="nav-link active"><i class="bi bi-arrow-return-left"></i> Previous</a>
   </li>
 </ul>
 
-<div class="container">
-  <h1 class="text-center mb-5">Blog</h1>
-  <div class="row">
+<?php
+include_once("../connect.php");
 
-    <?php
+if (!empty($_GET["id"]) && isset($_GET["id"])) {
+  $id_blog = $_GET["id"];
 
-    $sql = "SELECT * FROM blogs ORDER BY id_blog DESC";
+  $sql = "SELECT * FROM blogs WHERE id_blog = $id_blog";
 
-    $result = $conn->query($sql);
-    if ($result->num_rows > 0) {
-      while ($row = $result->fetch_assoc()) {
-        $id_blog = $row["id_blog"];
-        $title = $row["title"];
-        $text = $row["text"];
-        $youtube_url = $row["youtube_url"];
-        $thumbnail_url = $row["thumbnail_url"];
+  $result = $conn->query($sql);
 
-        echo "<div class='col-sm'>";
-        echo "<a href='{$_SERVER["PHP_SELF"]}?o=view_blog&id=$id_blog' class='text-decoration-none'>";
-        echo "<div class='card'>";
-        echo "<img src='$thumbnail_url' alt='' class='card-img-top'>";
-        echo "<div class='card-body'>";
-        echo "<p class='text-capitalize'>$title</p>";
-        echo "</div>";
-        echo "</div>";
-        echo "</a>";
-        echo "</div>";
-      }
-    } else {
-      echo "0 resultados";
+  if ($result->num_rows == 1) {
+    if ($row = $result->fetch_assoc()) {
+      $title = $row["title"];
+      $text = $row["text"];
+      $date = $row["date"];
+      $youtube_url = $row["youtube_url"];
+      $thumbnail_url = $row["thumbnail_url"];
+
+      echo "<div class='container mt-5'>";
+      echo "<div class='row'>";
+      echo "<div class='col'>";
+      echo "$youtube_url";
+      echo "</div>";
+      echo "<div class='col text-center'>";
+      echo "<h2>$title</h2>";
+      echo "<p>$date</p>";
+      echo "</div>";
+      echo "</div>";
+      echo "<div class='b-example-divider'>";
+      echo "</div>";
+      echo "<div class='row mt-5'>";
+      echo "<p>$text</p>";
+      echo "</div>";
+      echo "</div>";
     }
-
-    ?>
-  </div>
-</div>
+  } else {
+    echo "0 results";
+  }
+}
+?>

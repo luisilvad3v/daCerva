@@ -1,5 +1,4 @@
 <?php
-include_once("connect.php");
 
 if (!empty($_GET["e"]) && isset($_GET["e"])) {
 
@@ -33,7 +32,7 @@ if (!empty($_POST["type"]) && isset($_POST["type"]) && $jewelry_type != $_POST["
 
   $result = $conn->query($sql);
 
-  header("location:$url?o=list_jewelries_types");
+  header("location:{$url}admin/jewelries_types/");
 }
 
 ?>

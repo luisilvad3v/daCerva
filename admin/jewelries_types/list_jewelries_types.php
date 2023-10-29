@@ -1,11 +1,3 @@
-<?php
-
-include_once("insert_jewelries_types.php");
-
-?>
-
-<hr>
-
 <h2>Jewelry types</h2>
 
 <table class="table">
@@ -16,8 +8,6 @@ include_once("insert_jewelries_types.php");
 
   <?php
 
-  include_once("connect.php");
-
   $sql = "SELECT * FROM jewelries_types ORDER BY id_jewelry_type DESC";
 
   $result = $conn->query($sql);
@@ -27,8 +17,8 @@ include_once("insert_jewelries_types.php");
       echo "<tr>";
       echo "<td>" . $row["id_jewelry_type"] . "</td>";
       echo "<td>" . $row["jewelry_type"] . "</td>";
-      echo "<td><a href='$url?o=edit_jewelries_types&e=" . $row["id_jewelry_type"] . "'><i class='bi bi-pencil'></i></a></td>";
-      echo "<td><a href='$url?o=delete_jewelries_types&d=" . $row["id_jewelry_type"] . "'><i class='bi bi-trash'></i></a></td>";
+      echo "<td><a href='{$url}admin/jewelries_types/?o=edit_jewelries_types&e=" . $row["id_jewelry_type"] . "'><i class='bi bi-pencil'></i></a></td>";
+      echo "<td><a href='{$url}admin/jewelries_types/?o=delete_jewelries_types&d=" . $row["id_jewelry_type"] . "'><i class='bi bi-trash'></i></a></td>";
       echo "</tr>";
     }
   } else {

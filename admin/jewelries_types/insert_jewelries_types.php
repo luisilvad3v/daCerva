@@ -1,10 +1,6 @@
 <?php
-include_once("funcoes.php")
-?>
 
-<h2>Insert Jewelries Types</h2>
-
-<?php
+echo "<h2>Insert Jewelries Types</h2>";
 
 include_once("form_jewelries_types.php");
 
@@ -18,5 +14,3 @@ if (!empty($_POST['type'])) {
     echo "Error: " . $sql . "<br>" . $conn->error;
   }
 }
-
-?>

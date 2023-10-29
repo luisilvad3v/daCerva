@@ -1,11 +1,3 @@
-<?php
-
-include_once("insert_alchemies.php");
-
-?>
-
-<hr>
-
 <h2>Alchemies</h2>
 
 <table class="table">
@@ -20,8 +12,6 @@ include_once("insert_alchemies.php");
   <th scope="col"></th>
 
   <?php
-
-  include_once("connect.php");
 
   $sql = "SELECT * FROM alchemies
           INNER JOIN alchemies_types ON alchemies_types.id_alchemy_type = alchemies.id_alchemy_type
@@ -39,9 +29,9 @@ include_once("insert_alchemies.php");
       echo "<td>" . $row["plant_la"] . "</td>";
       echo "<td>" . $row["price"] . "</td>";
       echo "<td>" . $row["stock"] . "</td>";
-      echo "<td><a href='" . $row["img_url"] . "'><img src='" . $row["img_url"] . "' alt='' style='width:100px'></td>";
-      echo "<td><a href='$url?o=edit_alchemies&e=" . $row["id_alchemy"] . "'><i class='bi bi-pencil'></i></a></td>";
-      echo "<td><a href='$url?o=delete_alchemies&d=" . $row["id_alchemy"] . "'><i class='bi bi-trash'></i></a></td>";
+      echo "<td><img src='{$url}shop/alchemies/img/{$row["img_url"]}' style='width:10vw'></td>";
+      echo "<td><a href='{$url}admin/alchemies/?o=edit_alchemies&e=" . $row["id_alchemy"] . "'><i class='bi bi-pencil'></i></a></td>";
+      echo "<td><a href='{$url}admin/alchemies/?o=delete_alchemies&d=" . $row["id_alchemy"] . "'><i class='bi bi-trash'></i></a></td>";
       echo "</tr>";
     }
   } else {

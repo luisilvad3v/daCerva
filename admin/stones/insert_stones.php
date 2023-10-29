@@ -1,7 +1,7 @@
 <?php
-include_once("funcoes.php");
 
 echo "<h2>Insert Stone</h2>";
+
 include_once("form_stones.php");
 
 if (!empty($_POST['stone'])) {

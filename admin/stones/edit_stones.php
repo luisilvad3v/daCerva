@@ -1,5 +1,4 @@
 <?php
-include_once("connect.php");
 
 if (!empty($_GET["e"]) && isset($_GET["e"])) {
 
@@ -34,7 +33,7 @@ if (!empty($_POST["stone"]) && isset($_POST["stone"]) && $stone != $_POST["stone
 
   $result = $conn->query($sql);
 
-  header("location:$url?o=list_stones");
+  header("location:{$url}admin/stones/");
 }
 
 ?>

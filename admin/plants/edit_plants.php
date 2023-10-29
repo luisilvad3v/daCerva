@@ -1,5 +1,4 @@
 <?php
-include_once("connect.php");
 
 if (!empty($_GET["e"]) && isset($_GET["e"])) {
 
@@ -37,7 +36,7 @@ if (!empty($_POST["plant_eng"]) && isset($_POST["plant_eng"]) && !empty($_POST["
 
   $result = $conn->query($sql);
 
-  header("location:$url?o=list_plants");
+  header("location:{$url}admin/plants/");
 }
 
 ?>

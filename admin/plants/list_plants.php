@@ -1,11 +1,3 @@
-<?php
-
-include_once("insert_plants.php");
-
-?>
-
-<hr>
-
 <h2>Plants</h2>
 
 <table class="table">
@@ -17,8 +9,6 @@ include_once("insert_plants.php");
 
   <?php
 
-  include_once("connect.php");
-
   $sql = "SELECT * FROM plants ORDER BY id_plant DESC";
 
   $result = $conn->query($sql);
@@ -29,8 +19,8 @@ include_once("insert_plants.php");
       echo "<td>" . $row["id_plant"] . "</td>";
       echo "<td>" . $row["plant_eng"] . "</td>";
       echo "<td>" . $row["plant_la"] . "</td>";
-      echo "<td><a href='$url?o=edit_plants&e=" . $row["id_plant"] . "'><i class='bi bi-pencil'></i></a></td>";
-      echo "<td><a href='$url?o=delete_plants&d=" . $row["id_plant"] . "'><i class='bi bi-trash'></i></a></td>";
+      echo "<td><a href='{$url}admin/plants/?o=edit_plants&e=" . $row["id_plant"] . "'><i class='bi bi-pencil'></i></a></td>";
+      echo "<td><a href='{$url}admin/plants/?o=delete_plants&d=" . $row["id_plant"] . "'><i class='bi bi-trash'></i></a></td>";
       echo "</tr>";
     }
   } else {
