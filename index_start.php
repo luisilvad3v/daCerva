@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="dark">
+<html lang="en" data-bs-theme='<?= $_COOKIE["mode"] ?>'>
 
 <head>
   <meta charset="UTF-8">

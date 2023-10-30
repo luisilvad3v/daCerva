@@ -1,6 +1,16 @@
 <?php
 $url = '/dacerva/';
 $name = 'daCerva';
+
+function btnMode()
+{
+  if (isset($_COOKIE["mode"])) {
+    return $_COOKIE["mode"] == "dark" ? "sun" : "moon";
+  } else {
+    return "moon";
+  }
+}
+
 ?>
 
 <nav class="navbar navbar-expand bg-body-tertiary">
@@ -32,6 +42,7 @@ $name = 'daCerva';
         echo "<a class='btn btn-primary' href='{$url}login/'>Login</a>";
       }
       ?>
+      <a href='<?= $url ?>mode/' class='btn btn-primary ms-1'><i class='bi bi-<?= btnMode() ?>'></i></a>
     </div>
 
   </div>
