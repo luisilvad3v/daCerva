@@ -28,7 +28,7 @@ if (!empty($_GET["id"]) && isset($_GET["id"])) {
 
       echo "<div class='col-lg-6 text-center'>";
       echo "<div class='ratio ratio-16x9'>";
-      echo "<iframe src='$youtube_url' class='img-fluid img-thumbnail rounded-4 w-100' title='YouTube video player' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>";
+      echo "<iframe src='$youtube_url' class='img-fluid img-thumbnail rounded-4 shadow' title='YouTube video player' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>";
       echo "</div>";
       echo "</div>";
 

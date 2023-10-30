@@ -16,7 +16,7 @@ function btnMode()
 <nav class="navbar navbar-expand bg-body-tertiary">
   <div class="container-fluid">
 
-    <a class="navbar-brand col" href="<?= $url ?>">Logo</a>
+    <a class="navbar-brand col" href="<?= $url ?>"><?= $name ?></a>
     <ul class="navbar-nav col justify-content-center">
       <li class="nav-item">
         <a class="nav-link" href="<?= $url ?>">Home</a>
