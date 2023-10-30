@@ -5,7 +5,6 @@
 </ul>
 
 <?php
-include_once("../connect.php");
 
 if (!empty($_GET["id"]) && isset($_GET["id"])) {
   $id_blog = $_GET["id"];

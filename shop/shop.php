@@ -13,8 +13,8 @@
         <div class="card mb-3 shadow">
           <img src="alchemies/img/Lemon balm mosquitoes.jpg" alt="" class="card-img-top">
           <div class="card-body">
-            <h2>Alchemies</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae nemo, possimus nam ipsam atque cum? Iusto deserunt dolorum assumenda ipsum molestias exercitationem explicabo officiis quis. Consectetur mollitia quod accusantium reprehenderit?</p>
+            <h2 class="text-center">Alchemies</h2>
+            <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae nemo, possimus nam ipsam atque cum? Iusto deserunt dolorum assumenda ipsum molestias exercitationem explicabo officiis quis. Consectetur mollitia quod accusantium reprehenderit?</p> -->
           </div>
         </div>
       </a>
@@ -24,8 +24,8 @@
         <div class="card mb-3 shadow">
           <img src="jewelries/img/flower woman.png" alt="" class="card-img-top">
           <div class="card-body">
-            <h2>Jewelries</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae nemo, possimus nam ipsam atque cum? Iusto deserunt dolorum assumenda ipsum molestias exercitationem explicabo officiis quis. Consectetur mollitia quod accusantium reprehenderit?</p>
+            <h2 class="text-center">Jewelries</h2>
+            <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae nemo, possimus nam ipsam atque cum? Iusto deserunt dolorum assumenda ipsum molestias exercitationem explicabo officiis quis. Consectetur mollitia quod accusantium reprehenderit?</p> -->
           </div>
         </div>
       </a>

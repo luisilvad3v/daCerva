@@ -4,7 +4,20 @@
   </li>
 </ul>
 
-<div class="container">
-  <h1 class="text-center mb-5">About</h1>
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, deserunt! Aperiam reprehenderit aliquid magnam dolores fugit delectus possimus ea sapiente voluptate repudiandae, exercitationem assumenda molestias dignissimos deserunt nisi laudantium praesentium.</p>
+<div class="container mt-4">
+
+  <div class="row mb-2">
+    <div class="col-sm-6 pe-4 mb-4">
+      <img src="<?= $url ?>img/logo_no_background.png" alt="" class="img-fluid img-thumbnail rounded-circle shadow">
+    </div>
+    <div class="col-sm-6">
+      <h1 class="text-center">About</h1>
+      <p>Quinta da Cerva is the materialization of a dream, dreamt together many years ago by a young couple who, after numerous journeys, wanted a place to settle down and live a simple, off-grid, and happy life.
+        We love to live in touch with nature and making the most of what Mother Earth has to offer us. Join us on this journey through the wild nature and come discover the scents, flavors, and colors of our farm in central Portugal.</p>
+    </div>
+  </div>
+  <div class="row">
+    <img src="<?= $url ?>img/family 3.png" alt="" class="img-fluid img-thumbnail rounded shadow">
+  </div>
+
 </div>
