@@ -30,7 +30,7 @@ include_once("../../connect.php");
 
         echo "<div class='col-sm-6 col-md-4 col-lg-3'>";
         echo "<a href='?o=alchemy&id=$id_alchemy' class='text-decoration-none'>";
-        echo "<div class='card'>";
+        echo "<div class='card mb-3 shadow'>";
         echo "<img src='img/{$img_url}' alt='' class='card-img-top'>";
         echo "<div class='card-body'>";
         echo "<h2 class='text-capitalize'>$plant_eng $alchemy_type</h2>";

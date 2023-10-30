@@ -1,5 +1,6 @@
 <?php
 $url = '/dacerva/';
+$name = 'daCerva';
 ?>
 
 <nav class="navbar navbar-expand bg-body-tertiary">

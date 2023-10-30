@@ -10,7 +10,7 @@
   <div class="row">
     <div class="col-sm">
       <a href="alchemies/" class="text-decoration-none">
-        <div class="card">
+        <div class="card mb-3 shadow">
           <img src="alchemies/img/Lemon balm mosquitoes.jpg" alt="" class="card-img-top">
           <div class="card-body">
             <h2>Alchemies</h2>
@@ -21,7 +21,7 @@
     </div>
     <div class="col-sm">
       <a href="jewelries/" class="text-decoration-none">
-        <div class="card">
+        <div class="card mb-3 shadow">
           <img src="jewelries/img/flower woman.png" alt="" class="card-img-top">
           <div class="card-body">
             <h2>Jewelries</h2>

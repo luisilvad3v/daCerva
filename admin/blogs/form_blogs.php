@@ -18,7 +18,7 @@
   <div class="mb-3">
     <label for="youtube_url" class="form-label">Youtube</label>
     <!-- <input type="text" class="form-control" id="youtube_url" name="youtube_url"> -->
-    <textarea name="youtube_url" id="youtube_url" rows="10" class="form-control"></textarea>
+    <input type="text" name="youtube_url" id="youtube_url" rows="10" class="form-control" />
   </div>
 
   <div class="mb-3">

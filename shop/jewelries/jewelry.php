@@ -25,19 +25,18 @@ if (!empty($_GET["id"]) && isset($_GET["id"])) {
       $stock = $row["stock"];
       $img_url = $row["img_url"];
 
-      echo "<div class='container'>";
-      echo "<h2 class='text-capitalize text-center mb-5'>$stone $jewelry_type</h2>";
-      echo "<div class='row'>";
+
+      echo "<div class='row mt-3'>";
 
       echo "<div class='col-sm-6'>";
-      echo "<img src='img/{$img_url}' alt='' class='img-fluid rounded img-thumbnail'>";
+      echo "<img src='img/{$img_url}' alt='' class='img-fluid rounded img-thumbnail shadow'>";
       echo "</div>";
 
-      echo "<div class='col-sm-6'>";
+      echo "<div class='col-sm-6 mt-3'>";
+      echo "<h2 class='text-capitalize'>$stone $jewelry_type</h2>";
       echo "<p>{$price}€</p>";
       echo "</div>";
 
-      echo "</div>";
       echo "</div>";
     }
   } else {
