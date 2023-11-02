@@ -1,6 +1,6 @@
 <?php
 
-echo "<h2>Insert Blog Post</h2>";
+echo "<h2 class='text-center'>Insert Blog Post</h2>";
 
 include_once("form_blogs.php");
 

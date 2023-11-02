@@ -1,11 +1,13 @@
-<ul class="nav nav-pills">
+<ul class="nav nav-pills justify-content-end me-2 mt-2">
   <li class="nav-item">
-    <a href="../" class="nav-link active"><i class="bi bi-arrow-return-left"></i> Previous</a>
+    <a href="../" class="nav-link active"><i class="bi bi-arrow-return-left"></i></a>
   </li>
 </ul>
 
-<div class="container">
-  <h1 class="text-center mb-5">Blog</h1>
+<h1 class="text-center">Blog</h1>
+
+<div class="container mt-3">
+
   <div class="row">
 
     <?php

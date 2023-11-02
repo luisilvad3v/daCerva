@@ -19,3 +19,12 @@ function test_input($data)
   $data = htmlspecialchars($data);
   return $data;
 }
+
+function btn_return($path)
+{
+  echo "<ul class='nav nav-pills justify-content-end me-2 mt-2'>";
+  echo "<li class='nav-item'>";
+  echo "<a href='$path' class='nav-link active'><</a>";
+  echo "</li>";
+  echo "</ul>";
+}

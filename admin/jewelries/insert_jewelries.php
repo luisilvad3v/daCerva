@@ -1,6 +1,6 @@
 <?php
 
-echo "<h2>Insert Jewelries</h2>";
+echo "<h2 class='text-center'>Insert Jewelries</h2>";
 include_once("form_jewelries.php");
 
 if (!empty($_POST['type']) and !empty($_POST['stone']) and !empty($_POST['price']) and !empty($_POST['stock'])) {

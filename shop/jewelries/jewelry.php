@@ -1,11 +1,10 @@
-<ul class="nav nav-pills">
+<ul class="nav nav-pills justify-content-end me-2 mt-2">
   <li class="nav-item">
-    <a href="./" class="nav-link active"><i class="bi bi-arrow-return-left"></i> Previous</a>
+    <a href="./" class="nav-link active"><i class="bi bi-arrow-return-left"></i></a>
   </li>
 </ul>
 
 <?php
-include_once("../../connect.php");
 
 if (!empty($_GET["id"]) && isset($_GET["id"])) {
   $id_jewelry = $_GET["id"];
@@ -25,8 +24,8 @@ if (!empty($_GET["id"]) && isset($_GET["id"])) {
       $stock = $row["stock"];
       $img_url = $row["img_url"];
 
-
-      echo "<div class='row mt-3'>";
+      echo "<div class='container'>";
+      echo "<div class='row'>";
 
       echo "<div class='col-sm-6'>";
       echo "<img src='img/{$img_url}' alt='' class='img-fluid rounded img-thumbnail shadow'>";
@@ -36,7 +35,7 @@ if (!empty($_GET["id"]) && isset($_GET["id"])) {
       echo "<h2 class='text-capitalize'>$stone $jewelry_type</h2>";
       echo "<p>{$price}€</p>";
       echo "</div>";
-
+      echo "</div>";
       echo "</div>";
     }
   } else {

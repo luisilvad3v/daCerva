@@ -2,7 +2,7 @@
 // if (!empty($_COOKIE["admin"])) {
 ?>
 
-<ul class="nav nav-pills">
+<ul class="nav bg-body-tertiary">
   <li class="nav-item">
     <a class="nav-link disabled" href="#">Admin</a>
   </li>

@@ -1,4 +1,4 @@
-<h2>Blogs</h2>
+<h2 class="text-center">Blogs</h2>
 
 <table class="table">
   <th scope="col">ID</th>

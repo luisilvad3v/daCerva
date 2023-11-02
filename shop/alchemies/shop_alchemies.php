@@ -1,15 +1,13 @@
-<?php
-include_once("../../connect.php");
-?>
-<ul class="nav nav-pills">
-  <li class="nav-item">
-    <a href="../" class="nav-link active"><i class="bi bi-arrow-return-left"></i> Previous</a>
+<ul class="nav nav-pills justify-content-end">
+  <li class="nav-item me-2 mt-2">
+    <a href="../" class="nav-link active"><i class="bi bi-arrow-return-left"></i></a>
   </li>
 </ul>
 
-<div class="container">
+<h1 class="text-center">Alchemies</h1>
 
-  <h1 class="text-center mb-5">Alchemies</h1>
+<div class="container mt-3">
+
   <div class="row">
 
     <?php

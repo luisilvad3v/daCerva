@@ -1,11 +1,10 @@
-<ul class="nav nav-pills">
-  <li class="nav-item">
-    <a href="./" class="nav-link active"><i class="bi bi-arrow-return-left"></i> Previous</a>
+<ul class="nav nav-pills justify-content-end">
+  <li class="nav-item mt-2 me-2">
+    <a href="./" class="nav-link active"><i class="bi bi-arrow-return-left"></i></a>
   </li>
 </ul>
 
 <?php
-include_once("../../connect.php");
 
 if (!empty($_GET["id"]) && isset($_GET["id"])) {
   $id_alchemy = $_GET["id"];
@@ -26,7 +25,8 @@ if (!empty($_GET["id"]) && isset($_GET["id"])) {
       $stock = $row["stock"];
       $img_url = $row["img_url"];
 
-      echo "<div class='row mt-3'>";
+      echo "<div class='container'>";
+      echo "<div class='row'>";
 
       echo "<div class='col-sm-6'>";
       echo "<img src='img/{$img_url}' alt='' class='img-fluid rounded img-thumbnail shadow'>";
@@ -38,7 +38,7 @@ if (!empty($_GET["id"]) && isset($_GET["id"])) {
       echo "<p>{$price}€</p>";
       echo "<p>$stock unit in stock</p>";
       echo "</div>";
-
+      echo "</div>";
       echo "</div>";
     }
   } else {

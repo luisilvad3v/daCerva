@@ -13,9 +13,4 @@
 <body>
   <?php
   include_once("navbar.php");
-  if (!empty($_COOKIE["nav_admin"])) {
-    include_once("admin/nav_admin.php");
-  }
-
   ?>
-  <div class="container mt-3">

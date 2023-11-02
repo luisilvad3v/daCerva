@@ -1,10 +1,10 @@
-<ul class="nav nav-pills">
+<ul class="nav nav-pills justify-content-end me-2 mt-2">
   <li class="nav-item">
-    <a href="../" class="nav-link active"><i class="bi bi-arrow-return-left"></i> Previous</a>
+    <a href="../" class="nav-link active"><i class="bi bi-arrow-return-left"></i></a>
   </li>
 </ul>
 
-<div class="container mt-4">
+<div class="container">
 
   <div class="row mb-2">
     <div class="col-sm-6 pe-4 mb-4">

@@ -1,6 +1,6 @@
 <?php
 
-echo "<h2>Insert Alchemy Type</h2>";
+echo "<h2 class='text-center'>Insert Alchemy Type</h2>";
 
 include_once("form_alchemies_types.php");
 

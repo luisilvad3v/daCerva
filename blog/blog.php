@@ -1,6 +1,6 @@
-<ul class="nav nav-pills">
-  <li class="nav-item">
-    <a href="./" class="nav-link active"><i class="bi bi-arrow-return-left"></i> Previous</a>
+<ul class="nav nav-pills justify-content-end">
+  <li class="nav-item me-2 mt-2">
+    <a href="./" class="nav-link active"><i class="bi bi-arrow-return-left"></i></a>
   </li>
 </ul>
 
@@ -21,7 +21,7 @@ if (!empty($_GET["id"]) && isset($_GET["id"])) {
       $youtube_url = $row["youtube_url"];
       $thumbnail_url = $row["thumbnail_url"];
 
-      echo "<div class='container mt-3'>";
+      echo "<div class='container mt-4'>";
 
       echo "<div class='row'>";
 

@@ -1,6 +1,6 @@
 <?php
 
-echo "<h2>Insert Stone</h2>";
+echo "<h2 class='text-center'>Insert Stone</h2>";
 
 include_once("form_stones.php");
 

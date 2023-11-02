@@ -1,6 +1,6 @@
 <?php
 
-echo "<h2>Insert Jewelries Types</h2>";
+echo "<h2 class='text-center'>Insert Jewelries Types</h2>";
 
 include_once("form_jewelries_types.php");
 

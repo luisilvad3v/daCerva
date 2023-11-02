@@ -1,4 +1,4 @@
-<h2>Stones</h2>
+<h2 class="text-center">Stones</h2>
 
 <table class="table">
   <th scope="col">ID</th>

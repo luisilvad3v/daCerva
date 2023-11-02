@@ -1,6 +1,5 @@
-<h1 class="text-center"><?= $name ?></h1>
-
-<div class="container mt-3">
+<div class="container">
+  <h1 class="text-center p-3"><?= $name ?></h1>
   <div class="row">
     <div class="col-sm">
       <a href="blog/" class="text-decoration-none">

@@ -1,6 +1,6 @@
 <?php
 
-echo "<h2>Insert Plant</h2>";
+echo "<h2 class='text-center'>Insert Plant</h2>";
 
 include_once("form_plants.php");
 

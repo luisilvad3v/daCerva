@@ -1,4 +1,4 @@
-<h2>Jewelry</h2>
+<h2 class="text-center">Jewelries</h2>
 
 <table class="table">
   <th scope="col">ID</th>
