@@ -1,8 +1,6 @@
 <?php
 include_once('index_start.php');
 
-include_once("connect.php");
-
 // echo "<pre>";
 // print_r($_COOKIE);
 // echo "</pre>";

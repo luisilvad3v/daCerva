@@ -1,8 +1,6 @@
-<ul class="nav nav-pills justify-content-end me-2 mt-2">
-  <li class="nav-item">
-    <a href="../" class="nav-link active"><i class="bi bi-arrow-return-left"></i></a>
-  </li>
-</ul>
+<?php
+btn_return("../");
+?>
 
 <h1 class="text-center">Blog</h1>
 

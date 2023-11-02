@@ -13,4 +13,6 @@
 <body>
   <?php
   include_once("navbar.php");
+  include_once("connect.php");
+  include_once("funcoes.php");
   ?>

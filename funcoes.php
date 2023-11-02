@@ -24,7 +24,9 @@ function btn_return($path)
 {
   echo "<ul class='nav nav-pills justify-content-end me-2 mt-2'>";
   echo "<li class='nav-item'>";
-  echo "<a href='$path' class='nav-link active'><</a>";
+  echo "<a href='$path' class='nav-link active'>";
+  echo "<i class='bi bi-arrow-return-left'></i>";
+  echo "</a>";
   echo "</li>";
   echo "</ul>";
 }
