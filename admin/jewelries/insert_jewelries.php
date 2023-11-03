@@ -1,27 +1,34 @@
+<h2 class="text-center">Insert Jewelries</h2>
+
 <?php
 
-echo "<h2 class='text-center'>Insert Jewelries</h2>";
 include_once("form_jewelries.php");
 
-if (!empty($_POST['type']) and !empty($_POST['stone']) and !empty($_POST['price']) and !empty($_POST['stock'])) {
-  $type = $_POST["type"];
-  $stone = $_POST['stone'];
-  $price = $_POST['price'];
-  $stock = $_POST['stock'];
+if (isset($_POST["type"])) {
+  if (!empty($_POST['type']) and !empty($_POST['stone']) and !empty($_POST['price']) and !empty($_POST['stock'])) {
 
-  if (!empty($_FILES["fileToUpload"]["name"])) {
-    include_once("upload_img.php");
-    $img_url = $target_file;
-  } else {
-    $img_url = "";
-  }
+    $type = $_POST["type"];
+    $stone = $_POST['stone'];
+    $price = $_POST['price'];
+    $stock = $_POST['stock'];
 
-  $sql = "INSERT INTO jewelries (id_jewelry_type, id_stone, price, stock, img_url)
+    if (!empty($_FILES["fileToUpload"]["name"])) {
+      $target_dir = "../../shop/jewelries/img/";
+      include_once("../upload_img.php");
+      $img_url = $file_name;
+    } else {
+      $img_url = "";
+    }
+
+    $sql = "INSERT INTO jewelries (id_jewelry_type, id_stone, price, stock, img_url)
           VALUES ('$type', '$stone', '$price', '$stock', '$img_url')";
 
-  if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully.";
+    if ($conn->query($sql) === TRUE) {
+      echo "<p class='text-success'>New record created successfully!</p>";
+    } else {
+      echo "Error: " . $sql . "<br>" . $conn->error;
+    }
   } else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
+    echo "<p class='text-danger mt-2'>Empty fields!</p>";
   }
 }

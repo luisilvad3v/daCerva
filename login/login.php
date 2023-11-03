@@ -33,7 +33,6 @@
           $cookie_time = 86400 * 30;
           setcookie('id_user', $row['id_user'], time() + $cookie_time, "/");
           setcookie('login', $row['login'], time() + $cookie_time, "/");
-          setcookie('password', $row['password'], time() + $cookie_time, "/");
           setcookie('admin', $row['admin'], time() + $cookie_time, "/");
 
           header("location:$url");

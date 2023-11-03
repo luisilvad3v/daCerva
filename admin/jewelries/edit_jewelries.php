@@ -14,6 +14,7 @@ if (!empty($_GET["e"]) && isset($_GET["e"])) {
     $id_stone = $row["id_stone"];
     $price = $row["price"];
     $stock = $row["stock"];
+    $img_url = $row["img_url"];
   } else {
     echo "Erro!";
   }
@@ -29,6 +30,7 @@ include_once("form_jewelries.php");
   document.getElementById("stone").value = "<?= $id_stone ?>";
   document.getElementById("price").value = "<?= $price ?>";
   document.getElementById("stock").value = "<?= $stock ?>";
+  document.getElementById("fileToUpload").value = "<?= $img_url ?>";
 </script>
 
 <?php

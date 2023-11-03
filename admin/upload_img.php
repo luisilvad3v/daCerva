@@ -1,8 +1,9 @@
 <?php
 if (!isset($target_dir)) {
-  $target_dir = "uploads/";
+  $target_dir = "img/";
 }
-$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+$file_name = $_FILES["fileToUpload"]["name"];
+$target_file = $target_dir . basename($file_name);
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 

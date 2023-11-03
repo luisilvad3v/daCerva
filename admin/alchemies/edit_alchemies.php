@@ -14,6 +14,7 @@ if (!empty($_GET["e"]) && isset($_GET["e"])) {
     $id_plant = $row["id_plant"];
     $price = $row["price"];
     $stock = $row["stock"];
+    $img_url = $row["img_url"];
   } else {
     echo "Erro!";
   }
@@ -29,6 +30,7 @@ include_once("form_alchemies.php");
   document.getElementById("plant").value = "<?= $id_plant ?>";
   document.getElementById("price").value = "<?= $price ?>";
   document.getElementById("stock").value = "<?= $stock ?>";
+  document.getElementById("fileToUpload").value = "<?= $img_url ?>";
 </script>
 
 <?php

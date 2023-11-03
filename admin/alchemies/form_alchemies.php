@@ -1,4 +1,4 @@
-<form action="" method="post" enctype="multipart/form-data">
+<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
   <div class="mb-3">
     <label for="type" class="form-label">Type</label>
     <select class="form-select" id="type" name="type">
