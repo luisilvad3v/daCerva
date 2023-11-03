@@ -16,7 +16,7 @@ if (!empty($_GET["e"]) && isset($_GET["e"])) {
     $stock = $row["stock"];
     $img_url = $row["img_url"];
   } else {
-    echo "Erro!";
+    echo "Error!";
   }
 }
 
@@ -30,32 +30,40 @@ include_once("form_alchemies.php");
   document.getElementById("plant").value = "<?= $id_plant ?>";
   document.getElementById("price").value = "<?= $price ?>";
   document.getElementById("stock").value = "<?= $stock ?>";
-  document.getElementById("fileToUpload").value = "<?= $img_url ?>";
 </script>
 
 <?php
 
-if (
-  !empty($_POST["type"]) && isset($_POST["type"]) &&
-  !empty($_POST["plant"]) && isset($_POST["plant"]) &&
-  !empty($_POST["price"]) && isset($_POST["price"]) &&
-  !empty($_POST["stock"]) && isset($_POST["stock"]) &&
-  ($id_alchemy_type != $_POST["type"] ||
-    $id_plant != $_POST["plant"] ||
-    $price != $_POST["price"] ||
-    $stock != $_POST["stock"])
-) {
+if (isset($_POST["type"])) {
+  if (!empty($_POST["type"]) && !empty($_POST["plant"]) && !empty($_POST["price"])) {
+    if ($id_alchemy_type != $_POST["type"] || $id_plant != $_POST["plant"] || $price != $_POST["price"] || $stock != $_POST["stock"] || (!empty($_FILES["fileToUpload"]["name"]) && $img_url != $_FILES["fileToUpload"]["name"])) {
 
-  $id_alchemy_type = $_POST["type"];
-  $id_plant = $_POST["plant"];
-  $price = $_POST["price"];
-  $stock = $_POST["stock"];
+      $id_alchemy_type = $_POST["type"];
+      $id_plant = $_POST["plant"];
+      $price = $_POST["price"];
+      $stock = $_POST["stock"];
 
-  $sql = "UPDATE alchemies SET id_alchemy_type = '$id_alchemy_type', id_plant = '$id_plant', price = '$price', stock = '$stock'
+      if (!empty($_FILES["fileToUpload"]["name"]) && $img_url != $_FILES["fileToUpload"]["name"]) {
+
+        $target_dir = "../../shop/alchemies/img/";
+        unlink($target_dir . $img_url);
+        include_once("../upload_img.php");
+        $img_url = $_FILES["fileToUpload"]["name"];
+      }
+
+      echo $sql = "UPDATE alchemies SET id_alchemy_type = '$id_alchemy_type', id_plant = '$id_plant', price = '$price', stock = '$stock', img_url = '$img_url'
           WHERE id_alchemy = $id_alchemy";
 
-  $result = $conn->query($sql);
-
-  header("location:{$url}admin/alchemies");
+      if ($conn->query($sql) == true) {
+        header("location:{$url}admin/alchemies");
+      } else {
+        echo "<p class='text-danger mt-2'>Error!</p>";
+      }
+    } else {
+      echo "<p class='text-danger mt-2'>Values not changed!</p>";
+    }
+  } else {
+    echo "<p class='text-danger mt-2'>Empty fields!</p>";
+  }
 }
 ?>

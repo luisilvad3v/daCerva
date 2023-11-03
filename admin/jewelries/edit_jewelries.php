@@ -16,11 +16,11 @@ if (!empty($_GET["e"]) && isset($_GET["e"])) {
     $stock = $row["stock"];
     $img_url = $row["img_url"];
   } else {
-    echo "Erro!";
+    echo "Error!";
   }
 }
 
-echo "<h2>Edit jewelry</h2>";
+echo "<h2>Edit Jewelry</h2>";
 include_once("form_jewelries.php");
 
 ?>
@@ -30,32 +30,40 @@ include_once("form_jewelries.php");
   document.getElementById("stone").value = "<?= $id_stone ?>";
   document.getElementById("price").value = "<?= $price ?>";
   document.getElementById("stock").value = "<?= $stock ?>";
-  document.getElementById("fileToUpload").value = "<?= $img_url ?>";
 </script>
 
 <?php
 
-if (
-  !empty($_POST["type"]) && isset($_POST["type"]) &&
-  !empty($_POST["stone"]) && isset($_POST["stone"]) &&
-  !empty($_POST["price"]) && isset($_POST["price"]) &&
-  !empty($_POST["stock"]) && isset($_POST["stock"]) &&
-  ($id_jewelry_type != $_POST["type"] ||
-    $id_stone != $_POST["stone"] ||
-    $price != $_POST["price"] ||
-    $stock != $_POST["stock"])
-) {
+if (isset($_POST["type"])) {
+  if (!empty($_POST["type"]) && !empty($_POST["stone"]) && !empty($_POST["price"])) {
+    if ($id_jewelry_type != $_POST["type"] || $id_stone != $_POST["stone"] || $price != $_POST["price"] || $stock != $_POST["stock"] || (!empty($_FILES["fileToUpload"]["name"]) && $img_url != $_FILES["fileToUpload"]["name"])) {
 
-  $id_jewelry_type = $_POST["type"];
-  $id_stone = $_POST["stone"];
-  $price = $_POST["price"];
-  $stock = $_POST["stock"];
+      $id_jewelry_type = $_POST["type"];
+      $id_stone = $_POST["stone"];
+      $price = $_POST["price"];
+      $stock = $_POST["stock"];
 
-  $sql = "UPDATE jewelries SET id_jewelry_type = '$id_jewelry_type', id_stone = '$id_stone', price = '$price', stock = '$stock'
+      if (!empty($_FILES["fileToUpload"]["name"]) && $img_url != $_FILES["fileToUpload"]["name"]) {
+
+        $target_dir = "../../shop/jewelries/img/";
+        unlink($target_dir . $img_url);
+        include_once("../upload_img.php");
+        $img_url = $_FILES["fileToUpload"]["name"];
+      }
+
+      echo $sql = "UPDATE jewelries SET id_jewelry_type = '$id_jewelry_type', id_stone = '$id_stone', price = '$price', stock = '$stock', img_url = '$img_url'
           WHERE id_jewelry = $id_jewelry";
 
-  $result = $conn->query($sql);
-
-  header("location:{$url}admin/jewelries");
+      if ($conn->query($sql) == true) {
+        header("location:{$url}admin/jewelries");
+      } else {
+        echo "<p class='text-danger mt-2'>Error!</p>";
+      }
+    } else {
+      echo "<p class='text-danger mt-2'>Values not changed!</p>";
+    }
+  } else {
+    echo "<p class='text-danger mt-2'>Empty fields!</p>";
+  }
 }
 ?>

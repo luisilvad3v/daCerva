@@ -14,6 +14,7 @@ if (!empty($_GET["e"]) && isset($_GET["e"])) {
     $text = $row["text"];
     $date = $row["date"];
     $youtube_url = $row["youtube_url"];
+    $thumbnail_url = $row["thumbnail_url"];
   } else {
     echo "Erro!";
   }
@@ -26,27 +27,43 @@ include_once("form_blogs.php");
 
 <script>
   document.getElementById("title").value = "<?= $title ?>";
+  document.getElementById("text").value = "<?= $text ?>";
   document.getElementById("date").value = "<?= $date ?>";
+  document.getElementById("youtube_url").value = "<?= $youtube_url ?>";
 </script>
 
 <?php
 
-if (
-  !empty($_POST["title"]) &&
-  ($title != $_POST["title"] ||
-    $text != $_POST["text"] ||
-    $youtube_url != $_POST["youtube_url"])
-) {
+if (isset($_POST["title"])) {
+  if (!empty($_POST["title"])) {
+    if ($title != $_POST["title"] || $text != $_POST["text"] || $date != $_POST["date"] || $youtube_url != $_POST["youtube_url"] || (!empty($_FILES["fileToUpload"]["name"]) && $thumbnail_url != $_FILES["fileToUpload"]["name"])) {
 
-  $title = $_POST["title"];
-  $text = $_POST["text"];
-  $youtube_url = $_POST["youtube_url"];
+      $title = $_POST["title"];
+      $text = $_POST["text"];
+      $date = $_POST["date"];
+      $youtube_url = $_POST["youtube_url"];
 
-  $sql = "UPDATE blogs SET title = '$title', text = '$text', youtube_url = '$youtube_url'
-          WHERE id_blog = $id_blog";
+      if (!empty($_FILES["fileToUpload"]["name"]) && $thumbnail_url != $_FILES["fileToUpload"]["name"]) {
 
-  $result = $conn->query($sql);
+        $target_dir = "../../blog/img/";
+        unlink($target_dir . $thumbnail_url);
+        include_once("../upload_img.php");
+        $thumbnail_url = $_FILES["fileToUpload"]["name"];
+      }
 
-  header("location:{$url}admin/blogs/");
+      $sql = "UPDATE blogs SET title = '$title', text = '$text', date = '$date', youtube_url = '$youtube_url', thumbnail_url = '$thumbnail_url'
+         WHERE id_blog = $id_blog";
+
+      if ($conn->query($sql) == true) {
+        header("location:{$url}admin/blogs");
+      } else {
+        echo "<p class='text-danger mt-2'>Error!</p>";
+      }
+    } else {
+      echo "<p class='text-danger mt-2'>Values not changed!</p>";
+    }
+  } else {
+    echo "<p class='text-danger mt-2'>Empty fields!</p>";
+  }
 }
 ?>
