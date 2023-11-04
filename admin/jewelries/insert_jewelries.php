@@ -7,10 +7,10 @@ include_once("form_jewelries.php");
 if (isset($_POST["type"])) {
   if (!empty($_POST['type']) and !empty($_POST['stone']) and !empty($_POST['price']) and !empty($_POST['stock'])) {
 
-    $type = $_POST["type"];
-    $stone = $_POST['stone'];
-    $price = $_POST['price'];
-    $stock = $_POST['stock'];
+    $type = test_input($_POST["type"]);
+    $stone = test_input($_POST['stone']);
+    $price = test_input($_POST['price']);
+    $stock = test_input($_POST['stock']);
 
     if (!empty($_FILES["fileToUpload"]["name"])) {
       $target_dir = "../../shop/jewelries/img/";

@@ -15,6 +15,7 @@ if (!empty($_GET["e"]) && isset($_GET["e"])) {
   }
 }
 
+echo "<h2 class='text-center'>Edit Jewelry Type</h2>";
 include_once("form_jewelries_types.php");
 
 ?>

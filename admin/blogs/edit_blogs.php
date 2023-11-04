@@ -20,14 +20,14 @@ if (!empty($_GET["e"]) && isset($_GET["e"])) {
   }
 }
 
-echo "<h2>Edit Blogs</h2>";
+echo "<h2 class='text-center'>Edit Blogs</h2>";
 include_once("form_blogs.php");
 
 ?>
 
 <script>
   document.getElementById("title").value = "<?= $title ?>";
-  document.getElementById("text").value = "<?= $text ?>";
+  document.getElementById("text").value = "<?= htmlspecialchars_decode($text) ?>";
   document.getElementById("date").value = "<?= $date ?>";
   document.getElementById("youtube_url").value = "<?= $youtube_url ?>";
 </script>
@@ -38,10 +38,10 @@ if (isset($_POST["title"])) {
   if (!empty($_POST["title"])) {
     if ($title != $_POST["title"] || $text != $_POST["text"] || $date != $_POST["date"] || $youtube_url != $_POST["youtube_url"] || (!empty($_FILES["fileToUpload"]["name"]) && $thumbnail_url != $_FILES["fileToUpload"]["name"])) {
 
-      $title = $_POST["title"];
-      $text = $_POST["text"];
-      $date = $_POST["date"];
-      $youtube_url = $_POST["youtube_url"];
+      $title = test_input($_POST["title"]);
+      $text = test_input($_POST["text"]);
+      $date = test_input($_POST["date"]);
+      $youtube_url = test_input($_POST["youtube_url"]);
 
       if (!empty($_FILES["fileToUpload"]["name"]) && $thumbnail_url != $_FILES["fileToUpload"]["name"]) {
 

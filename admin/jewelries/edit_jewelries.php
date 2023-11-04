@@ -20,7 +20,7 @@ if (!empty($_GET["e"]) && isset($_GET["e"])) {
   }
 }
 
-echo "<h2>Edit Jewelry</h2>";
+echo "<h2 class='text-center'>Edit Jewelry</h2>";
 include_once("form_jewelries.php");
 
 ?>
@@ -38,10 +38,10 @@ if (isset($_POST["type"])) {
   if (!empty($_POST["type"]) && !empty($_POST["stone"]) && !empty($_POST["price"])) {
     if ($id_jewelry_type != $_POST["type"] || $id_stone != $_POST["stone"] || $price != $_POST["price"] || $stock != $_POST["stock"] || (!empty($_FILES["fileToUpload"]["name"]) && $img_url != $_FILES["fileToUpload"]["name"])) {
 
-      $id_jewelry_type = $_POST["type"];
-      $id_stone = $_POST["stone"];
-      $price = $_POST["price"];
-      $stock = $_POST["stock"];
+      $id_jewelry_type =  test_input($_POST["type"]);
+      $id_stone =  test_input($_POST["stone"]);
+      $price =  test_input($_POST["price"]);
+      $stock =  test_input($_POST["stock"]);
 
       if (!empty($_FILES["fileToUpload"]["name"]) && $img_url != $_FILES["fileToUpload"]["name"]) {
 

@@ -15,7 +15,7 @@ if (!empty($_GET["e"]) && isset($_GET["e"])) {
   }
 }
 
-echo "<h2>Edit Stone</h2>";
+echo "<h2 class='text-center'>Edit Stone</h2>";
 include_once("form_stones.php");
 
 ?>
@@ -27,10 +27,10 @@ include_once("form_stones.php");
 <?php
 
 if (!empty($_POST["stone"]) && isset($_POST["stone"]) && $stone != $_POST["stone"]) {
-  $stone = $_POST["stone"];
+
+  $stone = test_input($_POST["stone"]);
 
   $sql = "UPDATE stones SET stone = '$stone' WHERE id_stone = $id_stone";
-
   $result = $conn->query($sql);
 
   header("location:{$url}admin/stones/");

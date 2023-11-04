@@ -15,7 +15,7 @@ if (!empty($_GET["e"]) && isset($_GET["e"])) {
   }
 }
 
-echo "<h2>Edit Alchemy Type</h2>";
+echo "<h2 class='text-center'>Edit Alchemy Type</h2>";
 include_once("form_alchemies_types.php");
 
 ?>

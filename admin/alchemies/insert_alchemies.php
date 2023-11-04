@@ -7,10 +7,10 @@ include_once("form_alchemies.php");
 if (isset($_POST["type"])) {
   if (!empty($_POST['type']) && !empty($_POST['plant']) && !empty($_POST['price']) && !empty($_POST['stock'])) {
 
-    $type = $_POST["type"];
-    $plant = $_POST['plant'];
-    $price = $_POST['price'];
-    $stock = $_POST['stock'];
+    $type = test_input($_POST["type"]);
+    $plant = test_input($_POST['plant']);
+    $price = test_input($_POST['price']);
+    $stock = test_input($_POST['stock']);
 
     if (!empty($_FILES["fileToUpload"]["name"])) {
       $target_dir = "../../shop/alchemies/img/";

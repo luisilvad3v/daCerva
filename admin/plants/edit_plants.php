@@ -16,7 +16,7 @@ if (!empty($_GET["e"]) && isset($_GET["e"])) {
   }
 }
 
-echo "<h2>Edit Plant</h2>";
+echo "<h2 class='text-center'>Edit Plant</h2>";
 include_once("form_plants.php");
 
 ?>
@@ -29,8 +29,8 @@ include_once("form_plants.php");
 <?php
 
 if (!empty($_POST["plant_eng"]) && isset($_POST["plant_eng"]) && !empty($_POST["plant_la"]) && isset($_POST["plant_la"]) && ($plant_eng != $_POST["plant_eng"] || $plant_la != $_POST["plant_la"])) {
-  $plant_eng = $_POST["plant_eng"];
-  $plant_la = $_POST["plant_la"];
+  $plant_eng = test_input($_POST["plant_eng"]);
+  $plant_la = test_input($_POST["plant_la"]);
 
   $sql = "UPDATE plants SET plant_eng = '$plant_eng', plant_la = '$plant_la' WHERE id_plant = $id_plant";
 

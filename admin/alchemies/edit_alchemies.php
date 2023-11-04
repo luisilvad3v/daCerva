@@ -20,7 +20,7 @@ if (!empty($_GET["e"]) && isset($_GET["e"])) {
   }
 }
 
-echo "<h2>Edit Alchemy</h2>";
+echo "<h2 class='text-center'>Edit Alchemy</h2>";
 include_once("form_alchemies.php");
 
 ?>
@@ -38,10 +38,10 @@ if (isset($_POST["type"])) {
   if (!empty($_POST["type"]) && !empty($_POST["plant"]) && !empty($_POST["price"])) {
     if ($id_alchemy_type != $_POST["type"] || $id_plant != $_POST["plant"] || $price != $_POST["price"] || $stock != $_POST["stock"] || (!empty($_FILES["fileToUpload"]["name"]) && $img_url != $_FILES["fileToUpload"]["name"])) {
 
-      $id_alchemy_type = $_POST["type"];
-      $id_plant = $_POST["plant"];
-      $price = $_POST["price"];
-      $stock = $_POST["stock"];
+      $id_alchemy_type = test_input($_POST["type"]);
+      $id_plant = test_input($_POST["plant"]);
+      $price = test_input($_POST["price"]);
+      $stock = test_input($_POST["stock"]);
 
       if (!empty($_FILES["fileToUpload"]["name"]) && $img_url != $_FILES["fileToUpload"]["name"]) {
 
